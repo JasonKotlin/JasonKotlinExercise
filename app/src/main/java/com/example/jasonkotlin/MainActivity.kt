@@ -1,15 +1,11 @@
 package com.example.jasonkotlin
 
-fun main(){
-    var i = 10;
-    println(i)
-    println("===========================")
-    val t = Test()
-    t.Hello()
-}
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 
-class Test(){
-    fun Hello(){
-        println("Oh! My God")
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
     }
 }
