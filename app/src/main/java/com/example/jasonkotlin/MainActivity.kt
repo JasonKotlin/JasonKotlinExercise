@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun test1(view: View) {
+    fun intentActivity(view: View){
         val i : Intent = Intent(this, SecondActivity::class.java).apply {
             putExtra("key", "goSecond")
         }

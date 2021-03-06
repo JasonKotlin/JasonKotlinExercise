@@ -13,7 +13,7 @@ class SecondActivity : AppCompatActivity() {
 
         if(intent != null && !TextUtils.isEmpty(intent.getStringExtra("key"))){
             val msg: String = intent.getStringExtra("key")
-            val txt1 = findViewById<TextView>(R.id.txt1).apply {
+            findViewById<TextView>(R.id.txt1).apply {
                 text = msg
                 setTextColor(Color.BLUE)
             }
