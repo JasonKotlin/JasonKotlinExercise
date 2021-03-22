@@ -1,20 +1,17 @@
 package com.example.jasonkotlin.view
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.jasonkotlin.baseclass.BaseFragment
-import com.example.jasonkotlin.R
 import com.example.jasonkotlin.databinding.FragmentHomeBinding
-import com.example.kotlin_base_demo.viewmmodel.SampleDataViewModel
+import com.example.jasonkotlin.viewmodel.ChangeViewModel
 
 class HomeFragment : BaseFragment() {
-    private val mViewModel by viewModels<SampleDataViewModel>()
+    private val mViewModel by viewModels<ChangeViewModel>()
     lateinit var mBinding: FragmentHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +39,7 @@ class HomeFragment : BaseFragment() {
     private fun setObserver() {
         mViewModel.changeClickEvent.observe(viewLifecycleOwner, Observer {
             if (it) {
-                getBaseActivity().transactionFragment(ClickExerciseFragment(), false)
+                getBaseActivity().transactionFragment(ClickExerciseFragment(), true, isPop = false)
             }
         })
     }

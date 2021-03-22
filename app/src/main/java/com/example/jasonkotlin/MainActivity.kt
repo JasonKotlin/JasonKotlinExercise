@@ -13,7 +13,7 @@ import com.example.jasonkotlin.view.HomeFragment
 class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        transactionFragment(HomeFragment(),false)
+        transactionFragment(HomeFragment(),false, isPop = false)
     }
 
     fun progressbarClick(view: View) {

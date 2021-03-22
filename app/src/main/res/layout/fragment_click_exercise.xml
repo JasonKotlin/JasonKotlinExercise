@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.kotlin_base_demo.viewmmodel.SampleDataViewModel" />
+            type="com.example.jasonkotlin.viewmodel.ChangeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,6 +14,7 @@
         android:background="@color/teal_200">
 
         <TextView
+            android:id="@+id/center_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="第二頁"
@@ -23,6 +24,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/pop_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="回上一頁"
+            android:onClick="@{()->viewModel.popView()}"
+            app:layout_constraintTop_toBottomOf="@+id/center_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/change_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="只是換頁"
+            android:onClick="@{()->viewModel.changeView()}"
+            app:layout_constraintTop_toBottomOf="@+id/pop_fragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
